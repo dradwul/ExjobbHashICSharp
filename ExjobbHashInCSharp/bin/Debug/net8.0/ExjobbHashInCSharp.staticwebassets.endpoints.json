@@ -1,0 +1,170 @@
+{
+  "Version": 1,
+  "ManifestType": "Build",
+  "Endpoints": [
+    {
+      "Route": "ExjobbHashInCSharp.ogxacw76ha.styles.css",
+      "AssetFile": "ExjobbHashInCSharp.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "509"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6MNH6kFVkGh/44+bMtDjTHXHrm6TU/BAmUWIQQfcBVU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 08:34:52 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ogxacw76ha"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6MNH6kFVkGh/44+bMtDjTHXHrm6TU/BAmUWIQQfcBVU="
+        },
+        {
+          "Name": "label",
+          "Value": "ExjobbHashInCSharp.styles.css"
+        }
+      ]
+    },
+    {
+      "Route": "ExjobbHashInCSharp.styles.css",
+      "AssetFile": "ExjobbHashInCSharp.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "509"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6MNH6kFVkGh/44+bMtDjTHXHrm6TU/BAmUWIQQfcBVU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 08:34:52 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6MNH6kFVkGh/44+bMtDjTHXHrm6TU/BAmUWIQQfcBVU="
+        }
+      ]
+    },
+    {
+      "Route": "app.ck3sammblg.css",
+      "AssetFile": "app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2152"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9HzUMgHECu7S9vCBo24Z5pFXpDXVol/GQ+rMazmOzEQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 08:30:00 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ck3sammblg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-9HzUMgHECu7S9vCBo24Z5pFXpDXVol/GQ+rMazmOzEQ="
+        },
+        {
+          "Name": "label",
+          "Value": "app.css"
+        }
+      ]
+    },
+    {
+      "Route": "app.css",
+      "AssetFile": "app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2152"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9HzUMgHECu7S9vCBo24Z5pFXpDXVol/GQ+rMazmOzEQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 08:30:00 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-9HzUMgHECu7S9vCBo24Z5pFXpDXVol/GQ+rMazmOzEQ="
+        }
+      ]
+    }
+  ]
+}

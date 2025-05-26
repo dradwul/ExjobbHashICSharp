@@ -1,0 +1,331 @@
+{
+  "Version": 1,
+  "Hash": "md5KRerU3/Eo8p91jWkNfsvDZXIaaz/VlqW8GpFzvv0=",
+  "Source": "ExjobbHashInCSharp",
+  "BasePath": "_content/ExjobbHashInCSharp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ExjobbHashInCSharp\\wwwroot",
+      "Source": "ExjobbHashInCSharp",
+      "ContentRoot": "C:\\Users\\thelu\\source\\repos\\ExjobbHashInCSharp\\ExjobbHashInCSharp\\wwwroot\\",
+      "BasePath": "_content/ExjobbHashInCSharp",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\thelu\\source\\repos\\ExjobbHashInCSharp\\ExjobbHashInCSharp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ExjobbHashInCSharp.styles.css",
+      "SourceId": "ExjobbHashInCSharp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\thelu\\source\\repos\\ExjobbHashInCSharp\\ExjobbHashInCSharp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/ExjobbHashInCSharp",
+      "RelativePath": "ExjobbHashInCSharp#[.{fingerprint}]?.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "Fingerprint": "ogxacw76ha",
+      "Integrity": "6MNH6kFVkGh/44+bMtDjTHXHrm6TU/BAmUWIQQfcBVU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\thelu\\source\\repos\\ExjobbHashInCSharp\\ExjobbHashInCSharp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ExjobbHashInCSharp.styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\thelu\\source\\repos\\ExjobbHashInCSharp\\ExjobbHashInCSharp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ExjobbHashInCSharp.bundle.scp.css",
+      "SourceId": "ExjobbHashInCSharp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\thelu\\source\\repos\\ExjobbHashInCSharp\\ExjobbHashInCSharp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/ExjobbHashInCSharp",
+      "RelativePath": "ExjobbHashInCSharp#[.{fingerprint}]!.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "Fingerprint": "ogxacw76ha",
+      "Integrity": "6MNH6kFVkGh/44+bMtDjTHXHrm6TU/BAmUWIQQfcBVU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\thelu\\source\\repos\\ExjobbHashInCSharp\\ExjobbHashInCSharp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ExjobbHashInCSharp.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\thelu\\source\\repos\\ExjobbHashInCSharp\\ExjobbHashInCSharp\\wwwroot\\app.css",
+      "SourceId": "ExjobbHashInCSharp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thelu\\source\\repos\\ExjobbHashInCSharp\\ExjobbHashInCSharp\\wwwroot\\",
+      "BasePath": "_content/ExjobbHashInCSharp",
+      "RelativePath": "app#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ck3sammblg",
+      "Integrity": "9HzUMgHECu7S9vCBo24Z5pFXpDXVol/GQ+rMazmOzEQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\app.css"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "app.ck3sammblg.css",
+      "AssetFile": "C:\\Users\\thelu\\source\\repos\\ExjobbHashInCSharp\\ExjobbHashInCSharp\\wwwroot\\app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2152"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9HzUMgHECu7S9vCBo24Z5pFXpDXVol/GQ+rMazmOzEQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 08:30:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ck3sammblg"
+        },
+        {
+          "Name": "label",
+          "Value": "app.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-9HzUMgHECu7S9vCBo24Z5pFXpDXVol/GQ+rMazmOzEQ="
+        }
+      ]
+    },
+    {
+      "Route": "app.css",
+      "AssetFile": "C:\\Users\\thelu\\source\\repos\\ExjobbHashInCSharp\\ExjobbHashInCSharp\\wwwroot\\app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2152"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9HzUMgHECu7S9vCBo24Z5pFXpDXVol/GQ+rMazmOzEQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 08:30:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-9HzUMgHECu7S9vCBo24Z5pFXpDXVol/GQ+rMazmOzEQ="
+        }
+      ]
+    },
+    {
+      "Route": "ExjobbHashInCSharp.bundle.scp.css",
+      "AssetFile": "C:\\Users\\thelu\\source\\repos\\ExjobbHashInCSharp\\ExjobbHashInCSharp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ExjobbHashInCSharp.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "509"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6MNH6kFVkGh/44+bMtDjTHXHrm6TU/BAmUWIQQfcBVU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 08:34:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6MNH6kFVkGh/44+bMtDjTHXHrm6TU/BAmUWIQQfcBVU="
+        }
+      ]
+    },
+    {
+      "Route": "ExjobbHashInCSharp.ogxacw76ha.bundle.scp.css",
+      "AssetFile": "C:\\Users\\thelu\\source\\repos\\ExjobbHashInCSharp\\ExjobbHashInCSharp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ExjobbHashInCSharp.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "509"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6MNH6kFVkGh/44+bMtDjTHXHrm6TU/BAmUWIQQfcBVU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 08:34:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ogxacw76ha"
+        },
+        {
+          "Name": "label",
+          "Value": "ExjobbHashInCSharp.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6MNH6kFVkGh/44+bMtDjTHXHrm6TU/BAmUWIQQfcBVU="
+        }
+      ]
+    },
+    {
+      "Route": "ExjobbHashInCSharp.ogxacw76ha.styles.css",
+      "AssetFile": "C:\\Users\\thelu\\source\\repos\\ExjobbHashInCSharp\\ExjobbHashInCSharp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ExjobbHashInCSharp.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "509"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6MNH6kFVkGh/44+bMtDjTHXHrm6TU/BAmUWIQQfcBVU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 08:34:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ogxacw76ha"
+        },
+        {
+          "Name": "label",
+          "Value": "ExjobbHashInCSharp.styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6MNH6kFVkGh/44+bMtDjTHXHrm6TU/BAmUWIQQfcBVU="
+        }
+      ]
+    },
+    {
+      "Route": "ExjobbHashInCSharp.styles.css",
+      "AssetFile": "C:\\Users\\thelu\\source\\repos\\ExjobbHashInCSharp\\ExjobbHashInCSharp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ExjobbHashInCSharp.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "509"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6MNH6kFVkGh/44+bMtDjTHXHrm6TU/BAmUWIQQfcBVU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 08:34:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6MNH6kFVkGh/44+bMtDjTHXHrm6TU/BAmUWIQQfcBVU="
+        }
+      ]
+    }
+  ]
+}

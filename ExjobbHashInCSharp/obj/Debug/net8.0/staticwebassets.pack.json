@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\thelu\\source\\repos\\ExjobbHashInCSharp\\ExjobbHashInCSharp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ExjobbHashInCSharp.bundle.scp.css",
+      "PackagePath": "staticwebassets\\ExjobbHashInCSharp.ogxacw76ha.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\thelu\\source\\repos\\ExjobbHashInCSharp\\ExjobbHashInCSharp\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ExjobbHashInCSharp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ExjobbHashInCSharp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.ExjobbHashInCSharp.props",
+      "PackagePath": "build\\ExjobbHashInCSharp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ExjobbHashInCSharp.props",
+      "PackagePath": "buildMultiTargeting\\ExjobbHashInCSharp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.ExjobbHashInCSharp.props",
+      "PackagePath": "buildTransitive\\ExjobbHashInCSharp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

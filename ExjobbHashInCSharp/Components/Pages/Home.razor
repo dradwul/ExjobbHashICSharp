@@ -1,0 +1,338 @@
+﻿@page "/"
+@rendermode InteractiveServer
+@using System.Security.Cryptography
+@using System.Text
+
+<div class="container">
+    <h1>Hash Algorithm Performance Test</h1>
+    
+    <div class="info-box">
+        <h3>Om testet</h3>
+        <p>Detta test mäter prestanda för olika hashalgoritmer med varierande indata-storlekar.</p>
+        <p>Testen fokuserar på algoritmer relevanta för moderna säkerhetsimplementationer i C#.</p>
+    </div>
+    
+    <div class="info-box important-box">
+        <h3>Exjobbrelevanta hashfunktioner</h3>
+        <ul>
+            <li>
+                <strong>SHA-256</strong>
+                <p>Rekommenderad för de flesta säkerhetskritiska tillämpningarna. Används ofta i digitala signaturer, filintegritetskontroller och lösenordshantering.</p>
+            </li>
+            <li>
+                <strong>SHA-512</strong>
+                <p>Liknar SHA-256, men med längre hashvärden (512 bitar vs 256 bitar), vilket ger högre säkerhet. Används i applikationer som kräver extra skydd mot kollisioner.</p>
+            </li>
+            <li>
+                <strong>HMAC</strong>
+                <p>Kombinerar en hashfunktion med en hemlig nyckel för att säkerställa dataintegritet. HMAC kan implementeras med olika underliggande algoritmer som SHA-256 eller SHA-512.</p>
+            </li>
+            <li>
+                <strong>PBKDF2</strong>
+                <p>Används ofta för att säkra lösenord genom att iterera hashningen flera gånger. Andra alternativ inkluderar externa bibliotek som Argon2 och BCrypt (ej inkluderade i denna test).</p>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="control-panel">
+        <p>Testa olika hashalgoritmer med varierande datastorlekar</p>
+        <div class="input-group">
+            <label for="iterations">Iterationer:</label>
+            <input id="iterations" type="number" @bind="_iterations" min="100" max="10000" />
+        </div>
+        <div class="algorithm-selection">
+            <h4>Vanliga Hash</h4>
+            <label><input type="checkbox" @bind="UseSHA256" /> SHA256</label>
+            <label><input type="checkbox" @bind="UseSHA512" /> SHA512</label>
+            <label><input type="checkbox" @bind="UseMD5" /> MD5</label>
+            
+            <h4>HMAC (med nyckel)</h4>
+            <label><input type="checkbox" @bind="UseHMACSHA256" /> HMAC-SHA256</label>
+            <label><input type="checkbox" @bind="UseHMACSHA512" /> HMAC-SHA512</label>
+            
+            <h4>Lösenordshash</h4>
+            <label><input type="checkbox" @bind="UsePBKDF2" /> PBKDF2</label>
+            
+            @if (UsePBKDF2)
+            {
+                <div class="pbkdf2-options">
+                    <label for="pbkdf2-iterations">PBKDF2 iterationer:</label>
+                    <input id="pbkdf2-iterations" type="number" @bind="_pbkdf2Iterations" min="1000" max="100000" step="1000" />
+                </div>
+            }
+        </div>
+        <button class="primary-button" @onclick="RunHashTests" disabled="@_isRunning">
+            @(_isRunning ? "Kör..." : "Kör hash-tester")
+        </button>
+    </div>
+    
+    <div class="info-box">
+        <h3>Faktorer som påverkar prestanda</h3>
+        <ul>
+            <li><strong>Indata-storlek:</strong> Större indata kräver mer bearbetningstid, men skalningen är inte alltid linjär.</li>
+            <li><strong>Antal iterationer:</strong> Fler iterationer ger mer tillförlitliga resultat genom att minimera påverkan av tillfälliga systembelastningar.</li>
+            <li><strong>Algoritmval:</strong> SHA512 bearbetar större block än SHA256, vilket kan göra den effektivare för stora datamängder. MD5 är snabbare men mindre säker.</li>
+            <li><strong>System-belastning:</strong> Bakgrundsprocesser och andra program kan påverka mätresultaten.</li>
+            <li><strong>Processortyp:</strong> Moderna processorer kan ha särskilda instruktioner för kryptografiska operationer.</li>
+        </ul>
+    </div>
+
+    @if (_isRunning)
+    {
+        <div class="progress">
+            <p>Testing in progress... (@_currentProgress%)</p>
+            <div class="progress-bar" style="width: @_currentProgress%"></div>
+        </div>
+    }
+
+    @if (_testResults.Any())
+    {
+        <div class="info-box warning-box">
+            <h3>Tolkning av resultat</h3>
+            <p>När du analyserar resultaten, notera följande:</p>
+            <ul>
+                <li>För små indata-storlekar dominerar uppstartskostnaden för hashalgoritmerna.</li>
+                <li>Genomströmningen (MB/s) ger en bättre bild av skalbarhet än tid per hash för stora datamängder.</li>
+                <li>Kör testet flera gånger för mer tillförlitliga resultat - första körningen kan påverkas av JIT-kompilering.</li>
+            </ul>
+        </div>
+        
+        <div class="info-box">
+            <h3>Minneseffekter</h3>
+            <p>Testet försöker minimera påverkan från minneshantering genom att:</p>
+            <ul>
+                <li><strong>Uppvärmning:</strong> 10 iterationer körs innan mätning för att säkerställa att JIT-kompilering är klar.</li>
+                <li><strong>Skräpinsamling:</strong> Explicit GC.Collect() anrops för att minimera risken för skräpinsamling under mätningar.</li>
+                <li><strong>Caching:</strong> Var medveten om att processorns cache kan påverka resultaten, särskilt vid upprepade tester med samma datamängd.</li>
+            </ul>
+        </div>
+        
+        <div class="results">
+            @foreach (var algorithmGroup in _testResults.GroupBy(r => r.Algorithm))
+            {
+                <h2>@algorithmGroup.Key Results</h2>
+                <div class="results-grid">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Input Size (chars)</th>
+                                <th>Iterations</th>
+                                <th>Total Time (ms)</th>
+                                <th>Time per Hash (µs)</th>
+                                <th>Throughput (MB/s)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var result in algorithmGroup.OrderBy(r => r.InputSize))
+                            {
+                                <tr>
+                                    <td>@result.InputSize.ToString("N0")</td>
+                                    <td>@result.Iterations.ToString("N0")</td>
+                                    <td>@result.TotalTimeMs.ToString("F2")</td>
+                                    <td>@result.TimePerHashMicroseconds.ToString("F4")</td>
+                                    <td>@result.ThroughputMBps.ToString("F2")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="info-box">
+                    <h4>Om @algorithmGroup.Key</h4>
+                    @if (algorithmGroup.Key == "SHA256")
+                    {
+                        <p>SHA256 producerar en 256-bitars (32 bytes) hash och är en av de vanligaste algoritmerna för digital signering och verifiering. Den är en del av SHA-2 familjen utvecklad av NSA. Rekommenderas för de flesta säkerhetskritiska tillämpningarna.</p>
+                    }
+                    else if (algorithmGroup.Key == "SHA512")
+                    {
+                        <p>SHA512 skapar en 512-bitars (64 bytes) hash och erbjuder högre säkerhet än SHA256. På 64-bitars system kan SHA512 ibland vara snabbare än SHA256 för stora datamängder. Används i applikationer som kräver extra skydd mot kollisioner.</p>
+                    }
+                    else if (algorithmGroup.Key == "MD5")
+                    {
+                        <p>MD5 är en äldre algoritm som producerar en 128-bitars (16 bytes) hash. Den är mycket snabb men anses inte säker för kryptografiska ändamål på grund av kollisionsattacker. MD5 bör endast användas för checksummor där säkerhet inte är ett krav.</p>
+                    }
+                    else if (algorithmGroup.Key.StartsWith("HMAC"))
+                    {
+                        <p>HMAC (Hash-based Message Authentication Code) kombinerar en hashfunktion med en hemlig nyckel för att säkerställa dataintegritet och autenticitet. HMAC skyddar mot förfalskningsattacker genom att både meddelandet och en hemlig nyckel används i hashberäkningen.</p>
+                        <p>@(algorithmGroup.Key) använder @(algorithmGroup.Key.Replace("HMAC-", "")) som underliggande hash-funktion.</p>
+                    }
+                    else if (algorithmGroup.Key.StartsWith("PBKDF2"))
+                    {
+                        <p>PBKDF2 (Password-Based Key Derivation Function 2) är en nyckelderivationsfunktion som används för att säkert derivera en nyckel från ett lösenord. För att skydda mot brute-force attacker utför PBKDF2 många iterationer av en underliggande hashfunktion.</p>
+                        <p>I detta test använder vi SHA256 som underliggande hash med @(algorithmGroup.Key.Substring(algorithmGroup.Key.IndexOf('(') + 1, algorithmGroup.Key.IndexOf(')') - algorithmGroup.Key.IndexOf('(') - 1)), vilket ger större motståndskraft mot lösenordsknäckning jämfört med en enkel hashfunktion.</p>
+                        <p><strong>Notera:</strong> För PBKDF2 visas "Throughput" som antal hash-operationer per sekund snarare än MB/s.</p>
+                    }
+                </div>
+            }
+        </div>
+    }
+</div>
+
+<style>
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    
+    h1 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+    
+    h2 {
+        color: #444;
+        margin: 30px 0 15px 0;
+    }
+    
+    h3 {
+        color: #555;
+        margin: 0 0 10px 0;
+    }
+    
+    h4 {
+        color: #666;
+        margin: 0 0 8px 0;
+    }
+    
+    .control-panel {
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+    
+    .input-group {
+        margin-bottom: 15px;
+    }
+    
+    .input-group label {
+        display: inline-block;
+        width: 100px;
+    }
+    
+    .algorithm-selection {
+        margin-bottom: 15px;
+    }
+    
+    .algorithm-selection label {
+        margin-right: 20px;
+    }
+    
+    .primary-button {
+        background-color: #0078d4;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+    }
+    
+    .primary-button:hover {
+        background-color: #0063b1;
+    }
+    
+    .primary-button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+    
+    .progress {
+        margin: 20px 0;
+    }
+    
+    .progress-bar {
+        height: 10px;
+        background-color: #0078d4;
+        border-radius: 5px;
+    }
+    
+    .results-grid {
+        overflow-x: auto;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 30px;
+    }
+    
+    th, td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: right;
+    }
+    
+    th {
+        background-color: #f0f0f0;
+        font-weight: 600;
+        text-align: center;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    
+    tr:hover {
+        background-color: #f0f0f0;
+    }
+    
+    /* Information boxes */
+    .info-box {
+        background-color: #e8f4f8;
+        border-left: 5px solid #17a2b8;
+        padding: 15px 20px;
+        margin: 20px 0;
+        border-radius: 0 4px 4px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .info-box h3, .info-box h4 {
+        color: #17a2b8;
+        margin-top: 0;
+    }
+    
+    .info-box ul {
+        margin-bottom: 0;
+        padding-left: 20px;
+    }
+    
+    .info-box li {
+        margin-bottom: 5px;
+    }
+    
+    .warning-box {
+        background-color: #fff3cd;
+        border-left-color: #ffc107;
+    }
+    
+    .warning-box h3, .warning-box h4 {
+        color: #856404;
+    }
+    
+    .important-box {
+        background-color: #d1ecf1;
+        border-left-color: #0c5460;
+    }
+    
+    .important-box h3, .important-box h4 {
+        color: #0c5460;
+    }
+    
+    /* PBKDF2 Options */
+    .pbkdf2-options {
+        margin-top: 10px;
+        margin-left: 20px;
+        padding: 10px;
+        background-color: #f8f9fa;
+        border-radius: 4px;
+    }
+    
+    .algorithm-selection h4 {
+        margin-top: 15px;
+        margin-bottom: 5px;
+        color: #555;
+    }
+</style>

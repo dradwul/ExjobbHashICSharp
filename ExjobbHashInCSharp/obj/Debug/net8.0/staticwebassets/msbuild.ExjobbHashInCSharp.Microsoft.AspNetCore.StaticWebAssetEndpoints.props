@@ -1,0 +1,28 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/ExjobbHashInCSharp/app.ck3sammblg.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ck3sammblg"},{"Name":"integrity","Value":"sha256-9HzUMgHECu7S9vCBo24Z5pFXpDXVol/GQ\u002BrMazmOzEQ="},{"Name":"label","Value":"_content/ExjobbHashInCSharp/app.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2152"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00229HzUMgHECu7S9vCBo24Z5pFXpDXVol/GQ\u002BrMazmOzEQ=\u0022"},{"Name":"Last-Modified","Value":"Mon, 26 May 2025 08:30:00 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/ExjobbHashInCSharp/app.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-9HzUMgHECu7S9vCBo24Z5pFXpDXVol/GQ\u002BrMazmOzEQ="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2152"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00229HzUMgHECu7S9vCBo24Z5pFXpDXVol/GQ\u002BrMazmOzEQ=\u0022"},{"Name":"Last-Modified","Value":"Mon, 26 May 2025 08:30:00 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/ExjobbHashInCSharp/ExjobbHashInCSharp.bundle.scp.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ExjobbHashInCSharp.ogxacw76ha.bundle.scp.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-6MNH6kFVkGh/44\u002BbMtDjTHXHrm6TU/BAmUWIQQfcBVU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"509"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00226MNH6kFVkGh/44\u002BbMtDjTHXHrm6TU/BAmUWIQQfcBVU=\u0022"},{"Name":"Last-Modified","Value":"Mon, 26 May 2025 08:34:52 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/ExjobbHashInCSharp/ExjobbHashInCSharp.ogxacw76ha.bundle.scp.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ExjobbHashInCSharp.ogxacw76ha.bundle.scp.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ogxacw76ha"},{"Name":"integrity","Value":"sha256-6MNH6kFVkGh/44\u002BbMtDjTHXHrm6TU/BAmUWIQQfcBVU="},{"Name":"label","Value":"_content/ExjobbHashInCSharp/ExjobbHashInCSharp.bundle.scp.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"509"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00226MNH6kFVkGh/44\u002BbMtDjTHXHrm6TU/BAmUWIQQfcBVU=\u0022"},{"Name":"Last-Modified","Value":"Mon, 26 May 2025 08:34:52 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>
